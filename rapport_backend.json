@@ -1,0 +1,251 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-08-31T16:18:29.580019809+01:00",
+  "ArtifactName": ".",
+  "ArtifactType": "filesystem",
+  "Metadata": {
+    "ImageConfig": {
+      "architecture": "",
+      "created": "0001-01-01T00:00:00Z",
+      "os": "",
+      "rootfs": {
+        "type": "",
+        "diff_ids": null
+      },
+      "config": {}
+    }
+  },
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-7783",
+          "PkgID": "form-data@4.0.3",
+          "PkgName": "form-data",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/form-data@4.0.3",
+            "UID": "e57744c8669b798"
+          },
+          "InstalledVersion": "4.0.3",
+          "FixedVersion": "2.5.4, 3.0.4, 4.0.4",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-7783",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "form-data: Unsafe random function in form-data",
+          "Description": "Use of Insufficiently Random Values vulnerability in form-data allows HTTP Parameter Pollution (HPP). This vulnerability is associated with program files lib/form_data.Js.\n\nThis issue affects form-data: \u003c 2.5.4, 3.0.0 - 3.0.3, 4.0.0 - 4.0.3.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-330"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-7783",
+            "https://github.com/benweissmann/CVE-2025-7783-poc",
+            "https://github.com/form-data/form-data",
+            "https://github.com/form-data/form-data/commit/3d1723080e6577a66f17f163ecd345a21d8d0fd0",
+            "https://github.com/form-data/form-data/security/advisories/GHSA-fjxv-7rqg-78g4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-7783",
+            "https://www.cve.org/CVERecord?id=CVE-2025-7783"
+          ],
+          "PublishedDate": "2025-07-18T17:15:44.747Z",
+          "LastModifiedDate": "2025-07-22T15:15:39.663Z"
+        }
+      ]
+    },
+    {
+      "Target": ".env.sample",
+      "Class": "secret",
+      "Secrets": [
+        {
+          "RuleID": "jwt-token",
+          "Category": "JWT",
+          "Severity": "MEDIUM",
+          "Title": "JWT token",
+          "StartLine": 5,
+          "EndLine": 5,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 3,
+                "Content": "",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 4,
+                "Content": "",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 5,
+                "Content": "JWT_SECRET=***********************************************************************************************************************************************************",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "JWT_SECRET=***********************************************************************************************************************************************************",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 6,
+                "Content": "",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "JWT_SECRET=***********************************************************************************************************************************************************",
+          "Layer": {}
+        }
+      ]
+    },
+    {
+      "Target": "generate-postman-collection.js",
+      "Class": "secret",
+      "Secrets": [
+        {
+          "RuleID": "jwt-token",
+          "Category": "JWT",
+          "Severity": "MEDIUM",
+          "Title": "JWT token",
+          "StartLine": 8,
+          "EndLine": 8,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 6,
+                "Content": "  baseUrl: \"http://localhost:3000\",",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "  baseUrl: \"http://localhost:3000\",",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 7,
+                "Content": "  authToken:",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "  authToken:",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 8,
+                "Content": "    \"********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "    \"********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 9,
+                "Content": "  outputDir: \"./postman\",",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "  outputDir: \"./postman\",",
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "    \"********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",",
+          "Layer": {}
+        }
+      ]
+    },
+    {
+      "Target": "postman/hotel-api-environment.json",
+      "Class": "secret",
+      "Secrets": [
+        {
+          "RuleID": "jwt-token",
+          "Category": "JWT",
+          "Severity": "MEDIUM",
+          "Title": "JWT token",
+          "StartLine": 11,
+          "EndLine": 11,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 9,
+                "Content": "    {",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "    {",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 10,
+                "Content": "      \"key\": \"authToken\",",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "      \"key\": \"authToken\",",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 11,
+                "Content": "      \"value\": \"********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "      \"value\": \"********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 12,
+                "Content": "      \"enabled\": true",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "      \"enabled\": true",
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "      \"value\": \"********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",",
+          "Layer": {}
+        }
+      ]
+    }
+  ]
+}
