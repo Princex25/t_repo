@@ -1,0 +1,17 @@
+=== JOURNAL DES TESTS AUTOMATISÉS - dim. 31 août 2025 23:41:03 +01 ===
+==== RÉSUMÉ DES TESTS ====
+✅ Tests réussis: 388/513 (75.6%)
+❌ Tests échoués: 125/513 (24.4%)
+📊 Suites de tests: 31 réussies, 30 échouées
+⏱️ Temps d'exécution: ~140 secondes
+
+==== COUVERTURE DE CODE ====
+📈 Statements: 38.76% (890/2296)
+📈 Branches: 38.63% (517/1338)
+📈 Functions: 33.97% (123/362)
+📈 Lines: 38.92% (882/2266)
+
+==== PROBLÈMES PRINCIPAUX ====
+🚨 Configuration Prisma mock défaillante
+🚨 Problème import.meta avec ESM/Jest
+🚨 Mocking des services incomplet
