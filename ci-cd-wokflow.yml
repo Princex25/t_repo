@@ -108,7 +108,6 @@ jobs:
             test --sarif --sarif-file-output=snyk_test_${{ github.sha }}.sarif
             code test --sarif --sarif-file-output=snyk_code_test_${{ github.sha }}.sarif
             monitor
-          severity-threshold: high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
